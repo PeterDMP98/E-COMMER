@@ -311,9 +311,34 @@ async function main() {
 
 
     const card__productsHTML = document.querySelector(".card__products");
-     
-    console.log(card__productsHTML);
+    
+    
+    let html= ""
+    for (const product in db.card) {
+        const {quantity,price,name,image,id,amount} = db.card[product];
+        html += `
+        <div class="card__product">
+            <div class="card__product--img"> 
+                <img src="${image}" alt="imagen">
+            </div>
+            <div class="card__product--body"> 
+                <h4>${name}</h4>
+                <h5><spant>Stock:</spant> ${quantity} | $${price}</h5>
 
+                <div class="card__product--body-op">
+                <i class="fa-solid fa-caret-down"></i>
+                <span>${amount} units</span>
+                <i class="fa-solid fa-caret-up"></i>
+                <i class="fa-solid fa-trash"></i>
+                </div>
+
+        </div>
+        
+        </div>
+        `
+    }
+
+    card__productsHTML.innerHTML = html
 
 }
 

@@ -125,6 +125,8 @@ header > nav > .content-icons{
     height: 80%;
     width: 100%;
     text-align: center;
+
+    overflow-y: scroll;
 }
 
 .Card_total{
@@ -163,22 +165,34 @@ header > nav > .content-icons{
 }
 /*************************MAIN HOME NOTICIAS********************/
 
-.home{
-    margin-top: 3rem;
-    margin-bottom: 4rem;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+main{
+    margin-top: 50px;
 }
 
-.new-product{
+.home{
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.new-product {
+    background-color: var(--first-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--first-color);
-    min-height: 300px;
+    min-height: 500px;
+    width: 40%;
 }
+
+.new-product > img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+}
+
 
 .new-news{
     display: flex;
