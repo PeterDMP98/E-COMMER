@@ -254,10 +254,10 @@ function printProduct(db) {
 
 function bag() {
     const bagHTML= document.querySelector(".fa-bag-shopping");
-    const MyCardsHTML= document.querySelector(".MyCards");
+    const MycartsHTML= document.querySelector(".Mycarts");
 
     bagHTML.addEventListener("click", function () {
-    MyCardsHTML.classList.toggle("card__show");
+    MycartsHTML.classList.toggle("cart__show");
 });
     
 }
@@ -265,10 +265,10 @@ function bag() {
 
 function menu() {
     const bagHTML= document.querySelector(".fa-bars");
-    const MyCardsHTML= document.querySelector(".menu");
+    const MycartsHTML= document.querySelector(".menu");
 
     bagHTML.addEventListener("click", function () {
-    MyCardsHTML.classList.toggle("card__show");
+    MycartsHTML.classList.toggle("cart__show");
 });
     
 }
@@ -282,50 +282,40 @@ function addProductToBag(db) {
 
             const productFine = db.products.find((products) => products.id === id);
 
-            if (db.card[productFine.id]) {
+            if (db.cart[productFine.id]) {
 
-                if (productFine.quantity=== db.card[productFine.id].amount) return alert("No tenemos mas en bodega")
+                if (productFine.quantity=== db.cart[productFine.id].amount) return alert("No tenemos mas en bodega")
 
-                db.card[productFine.id].amount++;
+                db.cart[productFine.id].amount++;
             } else{
-                db.card[productFine.id] = {...productFine,  amount: 1}
+                db.cart[productFine.id] = {...productFine,  amount: 1}
             }
 
-            window.localStorage.setItem("card", JSON.stringify(db.card))
-            console.log(db.card);
+            window.localStorage.setItem("cart", JSON.stringify(db.cart))
+            printProductBag(db)
         }
     });
     
 }
 
-async function main() {
-    const db = {
-        products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
-        card: JSON.parse(window.localStorage.getItem("card")) || {},
-    };
+function printProductBag(db) {
 
-    printProduct(db)
-    bag()
-    menu()
-    addProductToBag(db)
-
-
-    const card__productsHTML = document.querySelector(".card__products");
+    const cart__productsHTML = document.querySelector(".cart__products");
     
     
     let html= ""
-    for (const product in db.card) {
-        const {quantity,price,name,image,id,amount} = db.card[product];
+    for (const product in db.cart) {
+        const {quantity,price,name,image,id,amount} = db.cart[product];
         html += `
-        <div class="card__product">
-            <div class="card__product--img"> 
+        <div class="cart__product">
+            <div class="cart__product--img"> 
                 <img src="${image}" alt="imagen">
             </div>
-            <div class="card__product--body"> 
+            <div class="cart__product--body"> 
                 <h4>${name}</h4>
-                <h5><spant>Stock:</spant> ${quantity} | $${price}</h5>
+                <h5><spant>Stock:</spant> ${quantity} | $${(price * amount)}</h5>
 
-                <div class="card__product--body-op">
+                <div class="cart__product--body-op" id="${id}">
                 <i class="fa-solid fa-caret-down"></i>
                 <span>${amount} units</span>
                 <i class="fa-solid fa-caret-up"></i>
@@ -338,7 +328,75 @@ async function main() {
         `
     }
 
-    card__productsHTML.innerHTML = html
+    cart__productsHTML.innerHTML = html
+    
+}
+
+function sumRestDeletProduct(db) {
+    const cartProductsHTML = document.querySelector(".cart__products");
+
+    cartProductsHTML.addEventListener("click", function(e) {
+
+        if (e.target.classList.contains("fa-caret-down")) {
+            const id= Number(e.target.parentElement.id)
+
+            const productFine = db.products.find((products) => products.id === id);
+            
+            if (db.cart[id].amount ===1 ) {
+                const response = confirm( "¿Quieres eliminar este producto?")
+
+                if (!response) return; delete db.cart[id];
+
+            } else {
+                db.cart[id].amount--;
+            }
+
+            
+        }
+
+        if (e.target.classList.contains("fa-caret-up")) {
+            const id= Number(e.target.parentElement.id)
+
+            const productFine = db.products.find((products) => products.id === id);
+            
+            if (productFine.quantity=== db.cart[productFine.id].amount) return alert("No tenemos mas en bodega")
+            
+            
+            db.cart[id].amount++;
+        }
+        
+        if (e.target.classList.contains("fa-trash")) {
+            const id= Number(e.target.parentElement.id)
+            const response = confirm( "¿Quieres eliminar este producto?")
+
+            if (!response) {
+                
+            } else {
+                delete db.cart[id];
+            }
+            
+        }
+
+        window.localStorage.setItem("cart", JSON.stringify(db.cart))
+
+        printProductBag(db)
+    })
+    
+}
+
+
+async function main() {
+    const db = {
+        products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
+        cart: JSON.parse(window.localStorage.getItem("cart")) || {},
+    };
+
+    printProduct(db)
+    bag()
+    menu()
+    addProductToBag(db)
+    printProductBag(db)
+    sumRestDeletProduct(db)
 
 }
 
