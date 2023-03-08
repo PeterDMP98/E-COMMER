@@ -200,13 +200,13 @@ header > nav > .content-icons{
     cursor: pointer;
 }
 
-.info__total{
+/* .info__total{
 
 }
 
 .info__amount{
 
-}
+} */
 
 /**********************MENU*************************************/
 
@@ -383,11 +383,20 @@ main{
     font-size: 0.8rem;
 }
 
-.icono__suma{
-    display: flex;
+.products__info .soldOut{
+    display: inline-block;
+    color: #fff;
+    background-color: lightcoral;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    user-select: none;
+    width: 80px;
 }
 
 .fa-plus{
+    display: flex;
+    justify-content: center;
+    width: 50px;
     background-color: #777;
     padding: 0.8rem;
     border-radius: 50%;

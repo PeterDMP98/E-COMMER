@@ -231,6 +231,9 @@ function printProduct(db) {
 
     for (const product of db.products) {
 
+        const buttonAdd =product.quantity? `<i class="fa-solid fa-plus" id='${product.id}'></i>` : `<span class="soldOut">sold out</span>`
+
+
         html +=
         `
         <div class="product">
@@ -239,7 +242,7 @@ function printProduct(db) {
             </div>
 
             <div class="products__info">
-                <div class="icono__suma"> <i class="fa-solid fa-plus" id='${product.id}'></i> </div>
+                ${buttonAdd}
                 <h3> $${product.price} <span>stock: ${product.quantity} </span> </h3>
                 <h4> ${product.name} </h4>
             </div>
@@ -329,7 +332,6 @@ function printProductBag(db) {
         `
     }
     printTotal(db);
-
     cart__productsHTML.innerHTML = html
     
 }
@@ -406,6 +408,44 @@ function printTotal(db) {
     
 }
 
+function buyProtuc(db) {
+    const btnbuyHTML = document.querySelector(".btn__buy")
+
+    btnbuyHTML.addEventListener("click", function () {
+
+        if(!Object.values(db.cart).length) return alert("Tienes que ingresar algo al carrito")
+        // console.log(!Object.values(db.cart).length);
+
+        const response = confirm("seguro que quieres comprar");
+        if (!response) return;
+        
+        const currentProduct =[];
+
+        for (const product of db.products) {
+            const productCart= db.cart[product.id]
+            
+            if (product.id === productCart?.id ) {
+                currentProduct.push({
+                    ...product,
+                    quantity: product.quantity - productCart.amount,}
+                )
+            } else {
+                currentProduct.push(product)
+            }
+
+            db.products = currentProduct;
+            db.cart = {}
+
+            window.localStorage.setItem(`products`, JSON.stringify(db.products))
+            window.localStorage.setItem(`cart`, JSON.stringify(db.cart))
+        }
+        printProduct(db)
+        printProductBag(db)
+        printTotal(db)
+    })
+    
+}
+
 
 async function main() {
     const db = {
@@ -420,6 +460,7 @@ async function main() {
     printProductBag(db)
     sumRestDeletProduct(db)
     printTotal(db)
+    buyProtuc(db)
 
 }
 
