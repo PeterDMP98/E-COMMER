@@ -292,7 +292,8 @@ function addProductToBag(db) {
             }
 
             window.localStorage.setItem("cart", JSON.stringify(db.cart))
-            printProductBag(db)
+            printProductBag(db);
+            
         }
     });
     
@@ -327,6 +328,7 @@ function printProductBag(db) {
         </div>
         `
     }
+    printTotal(db);
 
     cart__productsHTML.innerHTML = html
     
@@ -384,6 +386,26 @@ function sumRestDeletProduct(db) {
     
 }
 
+function printTotal(db) {
+    const infoTotalHTML = document.querySelector(".info__total");
+    const infoAmountHTML = document.querySelector(".info__amount");
+
+    let totalPreci= 0;
+    let amountProduct= 0
+
+    for (const product in db.cart ) {
+        const {amount, price} = db.cart[product];
+        amountProduct += amount;
+        totalPreci += price * amount;
+    }
+
+    infoTotalHTML.textContent = "$" + totalPreci + ".00" ;
+    infoAmountHTML.textContent = amountProduct + " units" ;
+
+
+    
+}
+
 
 async function main() {
     const db = {
@@ -397,6 +419,7 @@ async function main() {
     addProductToBag(db)
     printProductBag(db)
     sumRestDeletProduct(db)
+    printTotal(db)
 
 }
 

@@ -122,7 +122,7 @@ header > nav > .content-icons{
 }
 
 .cart__products{
-    height: 80%;
+    height: 85%;
     width: 100%;
     overflow-y: scroll;
 
@@ -148,7 +148,7 @@ header > nav > .content-icons{
 }
 
 .cart__product--body{
-    width: 80%;
+    width: 90%;
     padding: 1rem;
 
     display: flex;
@@ -170,9 +170,42 @@ header > nav > .content-icons{
     cursor: pointer;
 }
 
-.cart_total{
-    height: 20%;
+.cart__total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    height: 10%;
     width: 100%;
+
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.cart__total--info{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn__buy{
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.info__total{
+
+}
+
+.info__amount{
+
 }
 
 /**********************MENU*************************************/
@@ -200,6 +233,7 @@ header > nav > .content-icons{
     height: 100%;
     gap: 1rem;
 }
+
 
 .cart__show{
     right: 0;
