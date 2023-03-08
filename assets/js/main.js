@@ -256,7 +256,7 @@ function printProduct(db) {
 }
 
 function bag() {
-    const bagHTML= document.querySelector(".fa-bag-shopping");
+    const bagHTML= document.querySelector(".content-bag");
     const MycartsHTML= document.querySelector(".Mycarts");
 
     bagHTML.addEventListener("click", function () {
@@ -296,6 +296,7 @@ function addProductToBag(db) {
 
             window.localStorage.setItem("cart", JSON.stringify(db.cart))
             printProductBag(db);
+            notificationInBag(db)
             
         }
     });
@@ -332,6 +333,7 @@ function printProductBag(db) {
         `
     }
     printTotal(db);
+    notificationInBag(db)
     cart__productsHTML.innerHTML = html
     
 }
@@ -442,25 +444,40 @@ function buyProtuc(db) {
         printProduct(db)
         printProductBag(db)
         printTotal(db)
+        notificationInBag(db)
     })
     
 }
 
+function notificationInBag(db) {
+    const amountProductsHTML = document.querySelector(".amountProducts");
 
+    let amount = 0;
+
+    for (const product in db.cart) {
+        amount+=db.cart[product].amount
+    }
+
+    amountProductsHTML.textContent = amount
+    
+}
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
         cart: JSON.parse(window.localStorage.getItem("cart")) || {},
     };
 
-    printProduct(db)
-    bag()
-    menu()
-    addProductToBag(db)
-    printProductBag(db)
-    sumRestDeletProduct(db)
-    printTotal(db)
-    buyProtuc(db)
+    printProduct(db);
+    bag();
+    menu();
+    addProductToBag(db);
+    printProductBag(db);
+    sumRestDeletProduct(db);
+    printTotal(db);
+    buyProtuc(db);
+    notificationInBag(db)
+    
+
 
 }
 
