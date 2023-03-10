@@ -12,117 +12,146 @@
 </head>
 
 <body>
+
     <header>
+
         <nav>
+            <div class="content__first-header">
 
-            <div class="logo-academlo" id="home">
-                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48">
-                    <g>
+                <!-- logo -->
+                <div class="logo-academlo" id="home">
+
+                    <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48">
                         <g>
-                            <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
-                            </path>
+                            <g>
+                                <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                                </path>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                <a href="#home">STORE</a>
-            </div> 
+                    </svg>
 
-            <div class="content-icons">
-                <i class="fa-regular fa-sun"></i>
-                <i class="fa-solid fa-moon"></i>
-                <div class="content-bag">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="amountProducts"></span>
-                </div>
-                <i class="fa-solid fa-bars"></i>
-            </div>
+                    <a href="#home">STORE</a>
+                </div> 
 
-            <div class="Mycarts">
+                <!-- *MENU* darckColor/bolsa/menu -->
+                <div class="content-icons">
 
-                <div class="cart__products">
-                </div>
-                    
-                <div class="cart__total">
-                    <div class="cart__total--info">
-                        <span class="info__total"></span>
-                        <span class="info__amount"></span>
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-solid fa-moon"></i>
+                    <div class="content-bag">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="amountProducts"></span>
                     </div>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            
+            </div>
 
-                    <button class="btn__buy">Comprar</button>
+            <!-- la bolsa bags -->
+            <div class="Mybags">
+    
+                <div class="bag__products"></div>
+                        
+                    <div class="bag__total">
 
-                    
+                        <div class="bag__total--info">
+                            <span class="info__total"></span>
+                            <span class="info__amount"></span>
+                        </div>
+    
+                        <button class="btn__buy">Comprar</button>
+ 
+                    </div>
+    
+                </div>
+                
+                <!-- Barra de Menu movilidad -->
+                <div class="menu">
+                    <div class="nav__menu">
+                        <h2><a href="#up">HOME</a></h2>
+                        <h2><a href="#all-products">PRODUCTS</a> </h2>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="menu">
-                <nav class="nav__menu">
-                    <h2><a href="#up">HOME</a></h2>
-                    <h2><a href="#all-products">PRODUCTS</a> </h2>
-                </nav>
-            </div>
-
-            </div>
         </nav>
-
+    
     </header>
 
+        <!-- todo el contenido -->
+        <!-- inicio de la pagina -->
     <main id="up">
+            
+        <!-- nuevos productos -->
+        <!-- imagen -->
 
-        <section class="home">
+        <section class="content__home">
 
-            <div class="new-product">
-                <img src="./assets/images/home.png" alt="image">
+            <div class="home">
+                <!-- imagen del producto home -->
+                <div class="content-img">
+                    <div class="newPorduct-img">
+                        <img src="./assets/images/home.png" alt="image">
+                    </div>
+                </div>
+    
+                <!-- informacion del producto -->
+
+                <article class="newNews"> 
+                    <h2>New Sweatshirt COLLECTIONS 2022</h2>
+                    <p class="newNews__description" >Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
+        
+                    <p class="newNews__buy">$14.00</p>
+        
+                    <a href="#all-products" class="btn">Show more</a>
+                </article>
+        
             </div>
 
         </section>
 
-        <section class="new-news"> 
-            <h2>New Sweatshirt COLLECTIONS 2022</h2>
-            <p class="p1" >Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
 
-            <p class="p2">$14.00</p>
-
-            <a href="#all-products" class="btn">Show more</a>
-        </section>
-
+            
+        <!-- filtros  -->
         <section class="filtros">
-                       
+                           
             <div class="content-filtros">
-
-                <div class="filtro">
+    
+                <button class="filtro">
                     <h2>Show all</h2>
                     <p>Show all products</p>
-                </div>
-                <div class="filtro">
+                </button>
+                <button class="filtro">
                     <h2>Shirt</h2>
                     <p>7 products</p>
-                </div>
-                <div class="filtro">
+                </button>
+                <button class="filtro">
                     <h2>Hoddie</h2>
                     <p>6 products</p>
-                </div>
-                <div class="filtro">
+                </button>
+                <button class="filtro">
                     <h2>Sweater</h2>
                     <p>5 products</p>
-                </div>
-
+                </button>
+    
             </div>
         </section>
-
+            
+        <!-- todos los productos -->
         <section id="all-products">
-            <div class="products">
-            </div>
+            <div class="products"></div>
         </section>
-
+    
     </main>
-
+        
+    <!-- pie de pagina -->
     <footer>
         <div class="out">
             <h2>Our information</h2>
-            <p>Colombia - Cartagena</p>
+            <p>Colombia - bagagena</p>
         </div>
-
+    
         <div class="about">
             <h2>About Us</h2>
             <p>Support Center</p>
@@ -130,7 +159,7 @@
             <p>About US</p>
             <p>copy Right</p>
         </div>
-
+    
         <div class="products__footer">
             <h2>products</h2>
             <p>Hoodies</p>
@@ -138,14 +167,14 @@
             <p>About Us</p>
             <p>Sweatshirts</p>
         </div>
-
+    
         <div class="social">
             <h2>social</h2>
-            <link rel="stylesheet" href="https://www.facebook.com/profile.php?id=100008436007618" class="fa-brands fa-facebook-f">
-            <link rel="stylesheet" href="https://twitter.com/ca_dmp" class="fa-brands fa-twitter">
-            <link rel="stylesheet" href="https://www.instagram.com/peter.dmp/?hl=es" class="fa-brands fa-instagram">
+            <a href="https://www.facebook.com/profile.php?id=100008436007618" class="fa-brands fa-facebook-f" target="_blank"> </a>
+            <a href="https://twitter.com/ca_dmp" class="fa-brands fa-twitter" target="_blank"></a>
+            <a href="https://www.instagram.com/peter.dmp/?hl=es" class="fa-brands fa-instagram" target="_blank"></a>
         </div>
-
+    
         <div class="YO">
             <p>Pedro Luis Caraballo Banquez</p>
             <div class="mail">

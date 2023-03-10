@@ -257,10 +257,10 @@ function printProduct(db) {
 
 function bag() {
     const bagHTML= document.querySelector(".content-bag");
-    const MycartsHTML= document.querySelector(".Mycarts");
+    const MybagsHTML= document.querySelector(".Mybags");
 
     bagHTML.addEventListener("click", function () {
-    MycartsHTML.classList.toggle("cart__show");
+    MybagsHTML.classList.toggle("bag__show");
 });
     
 }
@@ -268,10 +268,10 @@ function bag() {
 
 function menu() {
     const bagHTML= document.querySelector(".fa-bars");
-    const MycartsHTML= document.querySelector(".menu");
+    const MybagsHTML= document.querySelector(".menu");
 
     bagHTML.addEventListener("click", function () {
-    MycartsHTML.classList.toggle("cart__show");
+    MybagsHTML.classList.toggle("bag__show");
 });
     
 }
@@ -285,16 +285,16 @@ function addProductToBag(db) {
 
             const productFine = db.products.find((products) => products.id === id);
 
-            if (db.cart[productFine.id]) {
+            if (db.bag[productFine.id]) {
 
-                if (productFine.quantity=== db.cart[productFine.id].amount) return alert("No tenemos mas en bodega")
+                if (productFine.quantity=== db.bag[productFine.id].amount) return alert("No tenemos mas en bodega")
 
-                db.cart[productFine.id].amount++;
+                db.bag[productFine.id].amount++;
             } else{
-                db.cart[productFine.id] = {...productFine,  amount: 1}
+                db.bag[productFine.id] = {...productFine,  amount: 1}
             }
 
-            window.localStorage.setItem("cart", JSON.stringify(db.cart))
+            window.localStorage.setItem("bag", JSON.stringify(db.bag))
             printProductBag(db);
             notificationInBag(db)
             
@@ -305,22 +305,22 @@ function addProductToBag(db) {
 
 function printProductBag(db) {
 
-    const cart__productsHTML = document.querySelector(".cart__products");
+    const bag__productsHTML = document.querySelector(".bag__products");
     
     
     let html= ""
-    for (const product in db.cart) {
-        const {quantity,price,name,image,id,amount} = db.cart[product];
+    for (const product in db.bag) {
+        const {quantity,price,name,image,id,amount} = db.bag[product];
         html += `
-        <div class="cart__product">
-            <div class="cart__product--img"> 
+        <div class="bag__product">
+            <div class="bag__product--img"> 
                 <img src="${image}" alt="imagen">
             </div>
-            <div class="cart__product--body"> 
+            <div class="bag__product--body"> 
                 <h4>${name}</h4>
                 <h5><spant>Stock:</spant> ${quantity} | $${(price * amount)}</h5>
 
-                <div class="cart__product--body-op" id="${id}">
+                <div class="bag__product--body-op" id="${id}">
                 <i class="fa-solid fa-caret-down"></i>
                 <span>${amount} units</span>
                 <i class="fa-solid fa-caret-up"></i>
@@ -334,27 +334,27 @@ function printProductBag(db) {
     }
     printTotal(db);
     notificationInBag(db)
-    cart__productsHTML.innerHTML = html
+    bag__productsHTML.innerHTML = html
     
 }
 
 function sumRestDeletProduct(db) {
-    const cartProductsHTML = document.querySelector(".cart__products");
+    const bagProductsHTML = document.querySelector(".bag__products");
 
-    cartProductsHTML.addEventListener("click", function(e) {
+    bagProductsHTML.addEventListener("click", function(e) {
 
         if (e.target.classList.contains("fa-caret-down")) {
             const id= Number(e.target.parentElement.id)
 
             const productFine = db.products.find((products) => products.id === id);
             
-            if (db.cart[id].amount ===1 ) {
+            if (db.bag[id].amount ===1 ) {
                 const response = confirm( "¿Quieres eliminar este producto?")
 
-                if (!response) return; delete db.cart[id];
+                if (!response) return; delete db.bag[id];
 
             } else {
-                db.cart[id].amount--;
+                db.bag[id].amount--;
             }
 
             
@@ -365,10 +365,10 @@ function sumRestDeletProduct(db) {
 
             const productFine = db.products.find((products) => products.id === id);
             
-            if (productFine.quantity=== db.cart[productFine.id].amount) return alert("No tenemos mas en bodega")
+            if (productFine.quantity=== db.bag[productFine.id].amount) return alert("No tenemos mas en bodega")
             
             
-            db.cart[id].amount++;
+            db.bag[id].amount++;
         }
         
         if (e.target.classList.contains("fa-trash")) {
@@ -378,12 +378,12 @@ function sumRestDeletProduct(db) {
             if (!response) {
                 
             } else {
-                delete db.cart[id];
+                delete db.bag[id];
             }
             
         }
 
-        window.localStorage.setItem("cart", JSON.stringify(db.cart))
+        window.localStorage.setItem("bag", JSON.stringify(db.bag))
 
         printProductBag(db)
     })
@@ -397,8 +397,8 @@ function printTotal(db) {
     let totalPreci= 0;
     let amountProduct= 0
 
-    for (const product in db.cart ) {
-        const {amount, price} = db.cart[product];
+    for (const product in db.bag ) {
+        const {amount, price} = db.bag[product];
         amountProduct += amount;
         totalPreci += price * amount;
     }
@@ -415,8 +415,8 @@ function buyProtuc(db) {
 
     btnbuyHTML.addEventListener("click", function () {
 
-        if(!Object.values(db.cart).length) return alert("Tienes que ingresar algo al carrito")
-        // console.log(!Object.values(db.cart).length);
+        if(!Object.values(db.bag).length) return alert("Tienes que ingresar algo al carrito")
+        // console.log(!Object.values(db.bag).length);
 
         const response = confirm("seguro que quieres comprar");
         if (!response) return;
@@ -424,22 +424,22 @@ function buyProtuc(db) {
         const currentProduct =[];
 
         for (const product of db.products) {
-            const productCart= db.cart[product.id]
+            const productbag= db.bag[product.id]
             
-            if (product.id === productCart?.id ) {
+            if (product.id === productbag?.id ) {
                 currentProduct.push({
                     ...product,
-                    quantity: product.quantity - productCart.amount,}
+                    quantity: product.quantity - productbag.amount,}
                 )
             } else {
                 currentProduct.push(product)
             }
 
             db.products = currentProduct;
-            db.cart = {}
+            db.bag = {}
 
             window.localStorage.setItem(`products`, JSON.stringify(db.products))
-            window.localStorage.setItem(`cart`, JSON.stringify(db.cart))
+            window.localStorage.setItem(`bag`, JSON.stringify(db.bag))
         }
         printProduct(db)
         printProductBag(db)
@@ -454,8 +454,8 @@ function notificationInBag(db) {
 
     let amount = 0;
 
-    for (const product in db.cart) {
-        amount+=db.cart[product].amount
+    for (const product in db.bag) {
+        amount+=db.bag[product].amount
     }
 
     amountProductsHTML.textContent = amount
@@ -464,7 +464,7 @@ function notificationInBag(db) {
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
-        cart: JSON.parse(window.localStorage.getItem("cart")) || {},
+        bag: JSON.parse(window.localStorage.getItem("bag")) || {},
     };
 
     printProduct(db);
