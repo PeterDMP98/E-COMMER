@@ -243,6 +243,7 @@ function printProduct(db) {
 
             <div class="products__info">
                 ${buttonAdd}
+                
                 <h3> $${product.price} <span>stock: ${product.quantity} </span> </h3>
                 <h4> ${product.name} </h4>
             </div>
@@ -461,6 +462,10 @@ function notificationInBag(db) {
     amountProductsHTML.textContent = amount
     
 }
+
+function colorDarck() {
+}
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
@@ -477,7 +482,12 @@ async function main() {
     buyProtuc(db);
     notificationInBag(db)
     
+    const colorDarckHTML = document.querySelector(".colorDarck")
 
+    colorDarckHTML.addEventListener("click", function () {
+        console.log("click");
+
+    });
 
 }
 
