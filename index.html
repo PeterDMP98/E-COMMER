@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="ligth">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,21 +25,22 @@
                     <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48">
                         <g>
                             <g>
-                                <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                                <path
+                                    d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
                                 </path>
                             </g>
                         </g>
                     </svg>
 
                     <a href="#home">STORE</a>
-                </div> 
+                </div>
 
-                <!-- *MENU* darckColor/bolsa/menu -->
+                <!-- *MENU* darkColor/bolsa/menu -->
                 <div class="content-icons">
-                    <div class="colorDarck">
-                    <!-- <i class="fa-regular fa-sun"></i> -->
-                    
-                    <i class="fa-solid fa-moon"></i>
+                    <div class="CambioIcoms">
+                        <button class="btn-sun"><i class="fa-regular fa-sun"></i></button>
+                        <button class="btn-moon"><i class="fa-solid fa-moon"></i></button>
+
                     </div>
                     <div class="content-bag">
                         <i class="fa-solid fa-bag-shopping"></i>
@@ -46,45 +48,45 @@
                     </div>
                     <i class="fa-solid fa-bars"></i>
                 </div>
-            
+
             </div>
 
             <!-- la bolsa bags -->
             <div class="Mybags">
-    
-                <div class="bag__products"></div>
-                        
-                    <div class="bag__total">
 
-                        <div class="bag__total--info">
-                            <span class="info__total"></span>
-                            <span class="info__amount"></span>
-                        </div>
-    
-                        <button class="btn__buy">Comprar</button>
- 
+                <div class="bag__products"></div>
+
+                <div class="bag__total">
+
+                    <div class="bag__total--info">
+                        <span class="info__total"></span>
+                        <span class="info__amount"></span>
                     </div>
-    
-                </div>
-                
-                <!-- Barra de Menu movilidad -->
-                <div class="menu">
-                    <div class="nav__menu">
-                        <h2><a href="#up">HOME</a></h2>
-                        <h2><a href="#all-products">PRODUCTS</a> </h2>
-                    </div>
+
+                    <button class="btn__buy">Comprar</button>
+
                 </div>
 
             </div>
 
+            <!-- Barra de Menu movilidad -->
+            <div class="menu">
+                <div class="nav__menu">
+                    <h2><a href="#up">HOME</a></h2>
+                    <h2><a href="#all-products">PRODUCTS</a> </h2>
+                </div>
+            </div>
+
+            </div>
+
         </nav>
-    
+
     </header>
 
-        <!-- todo el contenido -->
-        <!-- inicio de la pagina -->
+    <!-- todo el contenido -->
+    <!-- inicio de la pagina -->
     <main id="up">
-            
+
         <!-- nuevos productos -->
         <!-- imagen -->
 
@@ -97,56 +99,55 @@
                         <img src="./assets/images/home.png" alt="image">
                     </div>
                 </div>
-    
+
                 <!-- informacion del producto -->
 
-                <article class="newNews"> 
+                <article class="newNews">
                     <h2>New Sweatshirt COLLECTIONS 2022</h2>
-                    <p class="newNews__description" >Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
-        
+                    <p class="newNews__description">Latest arrival of the new Hanes Midweight Crewneck sweatshirt
+                        imported from the 2022 series, with a modern design.</p>
+
                     <p class="newNews__buy">$14.00</p>
-        
+
                     <a href="#all-products" class="btn">Show more</a>
                 </article>
-        
+
             </div>
 
         </section>
 
 
-            
+
         <!-- filtros  -->
         <section class="filtros">
-                           
+
             <div class="content-filtros">
-    
-                <button class="filtro">
-                    <h2>Show all</h2>
-                    <p>Show all products</p>
+
+                <button class="filtro filter__show-all" >
                 </button>
-                <button class="filtro">
-                    <h2>Shirt</h2>
-                    <p>7 products</p>
+                <button class="filtro filter__shirt">
+                    <!-- <h2>Shirt</h2>
+                    <p>7 products</p> -->
                 </button>
-                <button class="filtro">
-                    <h2>Hoddie</h2>
-                    <p>6 products</p>
+                <button class="filtro filter__hoddie">
+                    <!-- <h2>Hoddie</h2>
+                    <p>6 products</p> -->
                 </button>
-                <button class="filtro">
-                    <h2>Sweater</h2>
-                    <p>5 products</p>
+                <button class="filtro filter__sweater">
+                    <!-- <h2>Sweater</h2>
+                    <p>5 products</p> -->
                 </button>
-    
+
             </div>
         </section>
-            
+
         <!-- todos los productos -->
         <section id="all-products">
             <div class="products"></div>
         </section>
-    
+
     </main>
-        
+
     <!-- pie de pagina -->
     <footer>
 
@@ -155,7 +156,7 @@
                 <h2>Our information</h2>
                 <p>Colombia - bagagena</p>
             </div>
-        
+
             <div class="about">
                 <h2>About Us</h2>
                 <p>Support Center</p>
@@ -163,7 +164,7 @@
                 <p>About US</p>
                 <p>copy Right</p>
             </div>
-        
+
             <div class="products__footer">
                 <h2>products</h2>
                 <p>Hoodies</p>
@@ -171,15 +172,16 @@
                 <p>About Us</p>
                 <p>Sweatshirts</p>
             </div>
-        
+
             <div class="social">
                 <h2>social</h2>
-                <a href="https://www.facebook.com/profile.php?id=100008436007618" class="fa-brands fa-facebook-f" target="_blank"> </a>
+                <a href="https://www.facebook.com/profile.php?id=100008436007618" class="fa-brands fa-facebook-f"
+                    target="_blank"> </a>
                 <a href="https://twitter.com/ca_dmp" class="fa-brands fa-twitter" target="_blank"></a>
                 <a href="https://www.instagram.com/peter.dmp/?hl=es" class="fa-brands fa-instagram" target="_blank"></a>
             </div>
         </div>
-    
+
         <div class="YO">
             <p>Pedro Luis Caraballo Banquez</p>
             <div class="mail">
@@ -187,7 +189,8 @@
             </div>
             <a href="https://github.com/PeterDMP98?tab=repositories" target="_blank">repositorios</a>
         </div>
-        
+
     </footer>
 </body>
+
 </html>

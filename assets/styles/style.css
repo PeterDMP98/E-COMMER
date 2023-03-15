@@ -1,76 +1,76 @@
-/* datos generales */
+:root[data-theme="ligth"] {
 
-:root {
-    --backg-body:#fff;
+    --backg-body: #fff;
 
-    --primer-backg:radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    --primer-backg: radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
+        radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+        linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 
-    --backg-hover:linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%),
-    radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%);
+    --backg-hover: linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%),
+        radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
+        radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+        radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%);
 
     --logo-color: hsl(354, 78%, 60%);
 
-    --shadow:0 .5rem 1rem rgba(0, 0, 0, .25);
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .25);
     --wbody: 1024px;
-    --width-body:1024px;
-    --height-top:50px;
+    --width-body: 1024px;
+    --height-top: 50px;
     --backg-add-bag: #ddd;
     --Op-faTrash: lightcoral;
     --color-text-general: #000;
     --color-text-secundario: #fff;
     --backg-info-product: hsl(0, 0%, 90%);
     --backg-faPlus: #777;
+    --backg-color-header: #fff;
 }
 
-:root {
-    --body-color:-moz-linear-gradient(0deg, rgba(56,97,147,1) 0%, rgba(0,0,0,1) 65%);
-    background: -webkit-linear-gradient(0deg, rgba(56,97,147,1) 0%, rgba(0,0,0,1) 65%);
-    background: linear-gradient(0deg, rgba(56,97,147,1) 0%, rgba(0,0,0,1) 65%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#386193",endColorstr="#000000",GradientType=1);
-    
-    --backg-body:#fff;
+:root[data-theme="dark"] {
+    --body-color: -moz-linear-gradient(0deg, rgba(56, 97, 147, 1) 0%, rgba(0, 0, 0, 1) 65%);
+    background: -webkit-linear-gradient(0deg, rgba(56, 97, 147, 1) 0%, rgba(0, 0, 0, 1) 65%);
+    background: linear-gradient(0deg, rgba(56, 97, 147, 1) 0%, rgba(0, 0, 0, 1) 65%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#386193", endColorstr="#000000", GradientType=1);
 
-    --primer-backg:radial-gradient(circle farthest-corner at 15% 90%, #bc318f, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #386193, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #386193, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #386193, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #386193, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #386193, transparent),
-    linear-gradient(#386193, #bc318f 30%, #e33f5f 50%, #bc318f 70%, #386193 100%);
+    --backg-body: #fff;
 
-    --backg-hover:linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%),
-    radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%);
+    --primer-backg: radial-gradient(circle farthest-corner at 15% 90%, #bc318f, transparent 50%),
+        radial-gradient(circle farthest-corner at 0 140%, #386193, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 0 -25%, #386193, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 0, #386193, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 60% -20%, #386193, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 100%, #386193, transparent),
+        linear-gradient(#386193, #bc318f 30%, #e33f5f 50%, #bc318f 70%, #386193 100%);
+
+    --backg-hover: linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%),
+        radial-gradient(circle farthest-corner at 15% 90%, #fec564, transparent 50%),
+        radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+        radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%);
 
     --logo-color: hsl(354, 78%, 60%);
 
-    --shadow:0 .5rem 1rem rgba(0, 0, 0, .25);
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .25);
     --wbody: 1024px;
-    --width-body:1024px;
-    --height-top:50px;
+    --width-body: 1024px;
+    --height-top: 50px;
     --backg-add-bag: radial-gradient(circle farthest-corner at 0 140%, #386193, transparent 50%),
-                    radial-gradient(ellipse farthest-corner at 0 -25%, #386193, transparent 50%),
-                    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-                    linear-gradient(#386193, #bc318f 30%, #e33f5f 50%, #bc318f 70%, #386193 100%);
+        radial-gradient(ellipse farthest-corner at 0 -25%, #386193, transparent 50%),
+        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        linear-gradient(#386193, #bc318f 30%, #e33f5f 50%, #bc318f 70%, #386193 100%);
     --Op-faTrash: lightcoral;
     --color-text-general: #fff;
     --color-text-secundario: #000;
@@ -80,7 +80,7 @@
     --backg-color-header: linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%);
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -88,43 +88,43 @@
     color: var(--color-text-general);
 }
 
-html{
+html {
     scroll-behavior: smooth;
     padding: 0 2rem;
 }
 
-html::-webkit-scrollbar{
+html::-webkit-scrollbar {
     width: 14px;
 }
 
-html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track {
     border-radius: 20px;
     background: var(--primer-backg);
 }
 
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
     border: 3px solid rgb(255, 255, 255);
     border-radius: 20px;
     background-color: transparent;
 }
 
-body{
+body {
     background: var(--body-color);
     max-width: var(--width-body);
     margin: 0 auto;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--color-text-general);
 }
 
-img{
+img {
     width: 100%;
     display: block;
 }
 
-header{
+header {
     background-color: var(--backg-color-header);
     height: var(--height-top);
     position: fixed;
@@ -137,7 +137,7 @@ header{
 /**********************************NABAR***********************/
 
 
-.content__first-header{
+.content__first-header {
     height: var(--height-top);
     margin: 0 auto;
     display: flex;
@@ -148,28 +148,28 @@ header{
 
 
 
-.logo-academlo{
+.logo-academlo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo-academlo >*{
+.logo-academlo>* {
     cursor: pointer;
 }
 
-.logo-icon{
+.logo-icon {
     width: 40px;
-    fill: var(--logo-color) ;
+    fill: var(--logo-color);
 }
 
-.logo-academlo > a{
+.logo-academlo>a {
     letter-spacing: 1px;
     font-weight: bold;
 }
 
 
-.content-icons{
+.content-icons {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -177,14 +177,44 @@ header{
     font-size: 1.5rem;
 }
 
-.content-icons >*{
+.CambioIcoms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-sun {
+    display: none;
+    border: none;
+    background: none;
+    margin: 0;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-moon {
+    border: none;
+    background: none;
+    margin: 0;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+
+.content-icons>* {
     cursor: pointer;
 }
 
 /*************************NAVAR MY bag********************************/
 
-.Mybags{
-    background-color:var(--color-text-secundario);
+.Mybags {
+    background-color: var(--color-text-secundario);
     height: calc(100vh - var(--height-top));
     width: 400px;
     position: fixed;
@@ -192,14 +222,14 @@ header{
     right: -1000px;
     padding: 1rem;
 
-    display:flex;
+    display: flex;
     flex-direction: column;
 
     transition: right 1s;
 }
 
 
-.bag__products{
+.bag__products {
     height: 85%;
     width: 100%;
     overflow-y: scroll;
@@ -209,11 +239,11 @@ header{
     gap: 1rem;
 }
 
-.bag__products::-webkit-scrollbar{
+.bag__products::-webkit-scrollbar {
     width: 0;
 }
 
-.bag__product{
+.bag__product {
     padding: 1rem;
 
     display: flex;
@@ -223,13 +253,13 @@ header{
     box-shadow: var(--shadow);
 }
 
-.bag__product--img{
+.bag__product--img {
     width: 40%;
     background: var(--backg-body1);
     border-radius: 1rem;
 }
 
-.bag__product--body{
+.bag__product--body {
     width: 90%;
     padding: 1rem;
 
@@ -238,25 +268,25 @@ header{
     gap: 0.3rem;
 }
 
-.bag__product--body-op{
+.bag__product--body-op {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.bag__product--body-op > .fa-trash{
+.bag__product--body-op>.fa-trash {
     color: var(--Op-faTrash);
 }
 
-.bag__product--body-op > i{
+.bag__product--body-op>i {
     cursor: pointer;
 }
 
-.bag__total{
+.bag__total {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 
     height: 10%;
     width: 100%;
@@ -265,14 +295,14 @@ header{
     gap: 0.5rem;
 }
 
-.bag__total--info{
+.bag__total--info {
     width: 100%;
 
     display: flex;
     justify-content: space-between;
 }
 
-.btn__buy{
+.btn__buy {
     padding: 0.5rem;
     width: 100%;
     background: var(--primer-backg);
@@ -285,16 +315,16 @@ header{
     border-radius: 0.3rem;
 }
 
-.btn__buy:hover{
+.btn__buy:hover {
     background: var(--backg-hover);
     color: var(--color-text-secundario);
 }
 
-.content-bag{
+.content-bag {
     position: relative;
 }
 
-.amountProducts{
+.amountProducts {
     width: 14px;
     height: 14px;
     font-size: 0.7rem;
@@ -307,22 +337,14 @@ header{
     align-items: center;
 
     position: absolute;
-    top: 10px;    
+    top: 10px;
     right: 4px;
 
 }
 
-/* .info__total{
-
-}
-
-.info__amount{
-
-} */
-
 /********************** NABVAR-MENU*************************************/
 
-.menu{
+.menu {
     background-color: var(--color-text-secundario);
     height: calc(100vh - var(--height-top));
     width: 400px;
@@ -331,15 +353,15 @@ header{
     right: -1000px;
     padding: 1rem;
 
-    display:flex;
+    display: flex;
     flex-direction: column;
 
     transition: right 0.7s;
 
-    
+
 }
 
-.nav__menu{
+.nav__menu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,7 +371,7 @@ header{
 }
 
 
-.bag__show{
+.bag__show {
     right: 0;
 }
 
@@ -358,65 +380,64 @@ header{
 
 /*************************MAIN HOME NOTICIAS********************/
 
-.content__home{
+.content__home {
     margin: 0 auto;
 }
 
-.home{
+.home {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.content-img{
+.content-img {
     width: 100%;
     display: flex;
     justify-content: end;
 }
 
 .newPorduct-img {
-    background-color: var(--first-color);
-    display:flex ;
-    justify-content:end;
+    display: flex;
+    justify-content: end;
     align-items: center;
     min-height: 500px;
     width: 40%;
 
     background: var(--primer-backg);
-    
+
 }
 
-.newPorduct-img > img{
+.newPorduct-img>img {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    
+
 }
 
-.newNews{
+.newNews {
     display: flex;
     flex-direction: column;
 }
 
-.newNews >h2{
+.newNews>h2 {
     margin-bottom: 1.5rem;
 }
 
-.newNews__description{
+.newNews__description {
     color: var(--color-text-general);
     font-weight: 200;
-    margin-bottom: 1rem ;
+    margin-bottom: 1rem;
 }
 
-.newNews__buy{
+.newNews__buy {
     color: hsl(354, 78%, 60%);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 
-.btn{
+.btn {
     display: flex;
     background: var(--primer-backg);
     color: var(--color-text-general);
@@ -426,20 +447,19 @@ header{
     margin-top: 1rem;
     place-self: baseline;
     border-radius: 0.1rem;
-    transition:color 0.5s;
+    transition: color 0.5s;
 }
 
-.btn:hover{
+.btn:hover {
     color: var(--color-text-secundario);
     border-radius: 0.3rem;
 
     background: var(--backg-hover)
-
 }
 
 /******************************FILTROS**************************/
 
-.filtros{
+.filtros {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -449,47 +469,32 @@ header{
     /* min-width: 200px; */
 }
 
-.content-filtros{
+.content-filtros {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
     gap: 1em 2rem;
-
-    /* display: grid;
-    grid-template-columns: repeat(2, 200px);
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; */
-
-
-/* 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; */
 }
 
-.filtro{
+.filtro {
     text-align: center;
     border-radius: 0.1rem;
     border: none;
-    /* background-image: linear-gradient( #2079b0); */
-    /* background-image: -webkit-linear-gradient(top,#dddcdc,#868080); */
+
     background: var(--primer-backg);
 
-    transition: color 0.5s ;
-    
+    transition: color 0.5s;
+
 }
 
-.filtro > *{
+.filtro>* {
     min-width: 100px;
     margin: 0.3rem 1rem;
 }
 
 /*****************HOVER FILTROS****************************/
 
-.filtro:hover{
+.filtro:hover {
     background: var(--backg-hover);
     color: var(--color-text-secundario);
     border-radius: 0.3rem;
@@ -497,33 +502,33 @@ header{
 
 
 /*******************MAIN PRODUCTOS*****************************/
-.products{
+.products {
     padding-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: var(--width-body);
     margin: 0 auto;
     gap: 1rem;
-    
+
 }
 
-.product{
+.product {
     border-radius: 1rem;
-    box-shadow:var(--shadow);
+    box-shadow: var(--shadow);
     background: var(--backg-color-product);
     position: relative;
-    
+
 }
 
-.product__img{
+.product__img {
     border-top-left-radius: 1rem;
-    border-top-right-radius:1rem ;
+    border-top-right-radius: 1rem;
     padding: 1rem;
     background: var(--backg-add-bag);
-    
+
 }
 
-.products__info{
+.products__info {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -531,16 +536,16 @@ header{
 
 }
 
-.products__info > h4{
+.products__info>h4 {
     min-height: 54px;
 }
 
-.products__info span{
+.products__info span {
     font-weight: normal;
     font-size: 0.8rem;
 }
 
-.products__info .soldOut{
+.products__info .soldOut {
     display: inline-block;
     color: var(--color-text-secundario);
     background-color: lightcoral;
@@ -550,8 +555,7 @@ header{
     width: 80px;
 }
 
-
-.fa-plus{
+.content__plus {
     display: flex;
     background: var(--backg-faPlus);
     height: 40px;
@@ -560,21 +564,26 @@ header{
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    
-    color:var(--color-text-general);
-    font-size: 1.5rem;
-    
+
+
+
     position: absolute;
     bottom: 92px;
     right: 10px;
 }
 
-#all-products{
+.fa-plus {
+    color: var(--color-text-general);
+    font-size: 1.5rem;
+}
+
+#all-products {
     margin-bottom: 100px;
 }
+
 /************************FOOTER***************************/
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -585,13 +594,14 @@ footer{
 
     background: var(--primer-backg);
 }
-.content__footer{
+
+.content__footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.content__footer > *{
+.content__footer>* {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -602,35 +612,35 @@ footer{
 }
 
 
-.social > a {
+.social>a {
     font-size: 1.5rem;
     margin: 0.5rem;
 }
 
-.fa-facebook-f{
+.fa-facebook-f {
     display: inline-block;
     width: 2rem;
     height: 2rem;
     padding: 0.4rem;
 }
 
-.fa-facebook-f:hover{
+.fa-facebook-f:hover {
     color: #fff;
-    background-image: -webkit-linear-gradient(top,#8eafe2, #3578E5);
+    background-image: -webkit-linear-gradient(top, #8eafe2, #3578E5);
     width: 2rem;
     height: 2rem;
     padding: 0.4rem;
     border-radius: 50%;
 }
 
-.fa-twitter{
+.fa-twitter {
     display: inline-block;
     width: 2rem;
     height: 2rem;
     padding: 0.4rem;
 }
 
-.fa-twitter:hover{
+.fa-twitter:hover {
     color: rgb(29, 155, 240);
     background-color: #fff;
     width: 2rem;
@@ -639,39 +649,20 @@ footer{
     border-radius: 50%;
 }
 
-.fa-instagram{
+.fa-instagram {
     display: inline-block;
     width: 2rem;
     height: 2rem;
     padding: 0.4rem;
-    
-    /*en esta esta haciendo varios radios de arriba hacia abajo creando varios cirucos creando un efecto y el fondo de instragran*/
 
-
-    /* background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%); */
-
-        
-    /*3 parecida a la tercera*/
-    /* background: #f09433; 
-      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 ); */
 }
 
-.fa-instagram:hover{
-    /*por estudiar que es el -webkit-backgroun-clip y -webkit-text-fill-color no aparece informacion pare en prueba*/
+.fa-instagram:hover {
+
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     -webkit-background-clip: text;
-            /* Also define standard property for compatibility */
-            background-clip: text;
+
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 
     width: 2rem;
@@ -680,7 +671,7 @@ footer{
     border-radius: 50%;
 }
 
-.YO{
+.YO {
     height: 100px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -690,36 +681,27 @@ footer{
     box-shadow: 0 0 5rem rgba(0, 0, 0, 0.37);
     gap: 0.5rem;
 
-    /* 
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5rem;
-    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.37);
-    gap: 0.5rem; */
 }
 
-.YO >a{
+.YO>a {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.YO > .mail{
+.YO>.mail {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.YO >a{
+.YO>a {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-/* .YO > hr{
-    height: 2px;
-    background-color: #000;
-} */
+
 /* @media (min-width: 500px) {
     .Mybags{
         
