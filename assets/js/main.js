@@ -297,12 +297,206 @@ function themes() {
     }
 }
 
+function infoCategory(db) {
+    const countsCategory = {};
+
+    for (const counts of db.products) {
+
+        if (countsCategory[counts.category]) {
+            countsCategory[counts.category]++;
+        } else{
+            countsCategory[counts.category]=1;
+        }
+    }
+    return countsCategory
+}
+
+function filterShow(db) {
+    const allCategory= infoCategory(db)
+
+    let allShow = 0;
+    for (const key in allCategory) {
+        allShow+=allCategory[key]
+    }
+
+    const showAllHTML = document.querySelector(".filter__show-all")
+
+    showAllHTML.innerHTML = `All show: ${allShow}`;
+
+    showAllHTML.addEventListener("click", function () {
+        printProduct(db);
+        
+    })
+    
+}
+
+function filterShirt(db) {
+    const allCategory= infoCategory(db)
+
+    const filterShirtHTML = document.querySelector(".filter__shirt")
+
+    filterShirtHTML.innerHTML = `Shirt products: ${allCategory.shirt}`;
+    
+    filterShirtHTML.addEventListener("click", function () {
+
+        const productsHTML = document.querySelector(".products")
+
+        let html = '';
+    
+        for (const product of db.products) {
+    
+            const buttonAdd = product.quantity ? `<i class="fa-solid fa-plus" id='${product.id}'></i>` : `<span class="soldOut">sold out</span>`
+    
+            if (product.category == 'shirt') {
+                html +=
+                `
+            <div class="product">
+                <div class=product__img> 
+                    <img src="${product.image}" alt="image the product" />
+                </div>
+    
+                <div class="products__info">
+                    
+                    <div class="content__plus">${buttonAdd}</div>
+                    
+                    <h3> $${product.price} <span>stock: ${product.quantity} </span> </h3>
+                    <h4> ${product.name} </h4>
+                </div>
+            </div> 
+            `
+            }
+    
+        productsHTML.innerHTML = html;
+                
+        }
+
+    
+        // let html ={};
+
+        // for (const allShirt of db.products) {
+
+        //     if (allShirt.category == 'shirt') {
+        //         html[allShirt.id]= allShirt
+                
+                
+        //     }
+        // }
+        // console.log(html);
+        
+    })
+        
+    
+}
+
+function filterHoddie(db) {
+    const allCategory= infoCategory(db)
+
+    const filterHoddieHTML = document.querySelector(".filter__hoddie")
+
+    filterHoddieHTML.innerHTML = `Hoddie products: ${allCategory.hoddie}`;
+
+    filterHoddieHTML.addEventListener("click", function () {
+
+        const productsHTML = document.querySelector(".products")
+
+        let html = '';
+    
+        for (const product of db.products) {
+    
+            const buttonAdd = product.quantity ? `<i class="fa-solid fa-plus" id='${product.id}'></i>` : `<span class="soldOut">sold out</span>`
+    
+            if (product.category == 'hoddie') {
+                html +=
+                `
+            <div class="product">
+                <div class=product__img> 
+                    <img src="${product.image}" alt="image the product" />
+                </div>
+    
+                <div class="products__info">
+                    
+                    <div class="content__plus">${buttonAdd}</div>
+                    
+                    <h3> $${product.price} <span>stock: ${product.quantity} </span> </h3>
+                    <h4> ${product.name} </h4>
+                </div>
+            </div> 
+            `
+            }
+    
+        productsHTML.innerHTML = html;
+                
+        }
+
+        
+        // let html ={};
+        // for (const allHoddie of db.products) {
+
+        //     if (allHoddie.category == 'hoddie') {
+        //         html[allHoddie.id]= allHoddie
+        //     }
+        // }
+        // console.log(html);
+    })
+    
+}
+
+function filterSweater(db) {
+    const allCategory= infoCategory(db)
+
+    const filterSweaterHTML = document.querySelector(".filter__sweater")
+
+    filterSweaterHTML.innerHTML = `Sweater products: ${allCategory.sweater}`;
+
+    filterSweaterHTML.addEventListener("click", function () {
+
+        const productsHTML = document.querySelector(".products")
+
+        let html = '';
+    
+        for (const product of db.products) {
+    
+            const buttonAdd = product.quantity ? `<i class="fa-solid fa-plus" id='${product.id}'></i>` : `<span class="soldOut">sold out</span>`
+    
+            if (product.category == 'sweater') {
+                html +=
+                `
+            <div class="product">
+                <div class=product__img> 
+                    <img src="${product.image}" alt="image the product" />
+                </div>
+    
+                <div class="products__info">
+                    
+                    <div class="content__plus">${buttonAdd}</div>
+                    
+                    <h3> $${product.price} <span>stock: ${product.quantity} </span> </h3>
+                    <h4> ${product.name} </h4>
+                </div>
+            </div> 
+            `
+            }
+    
+        productsHTML.innerHTML = html;
+                
+        }
+
+        // let html ={};
+        // for (const allSweater of db.products) {
+
+        //     if (allSweater.category == 'sweater') {
+        //         html[allSweater.id]= allSweater
+        //     }
+        // }
+        // console.log(html);
+    })
+}
+
 async function main() {
     const db = {
-        products: JSON.parse(window.localStorage.getItem("products")) || (await getProducts()),
+        products: JSON.parse(window.localStorage.getItem('products')) || (await getProducts()),
         bag: JSON.parse(window.localStorage.getItem("bag")) || {},
     };
-
 
     printProduct(db);
     bag();
@@ -314,76 +508,10 @@ async function main() {
     buyProtuc(db);
     notificationInBag(db)
     themes()
-
-    const contentFiltrosHTML = document.querySelector(".content-filtros")
-    const showAllHTML = document.querySelector(".filter__show-all")
-    const filterShirtHTML = document.querySelector(".filter__shirt")
-    const filterHoddieHTML = document.querySelector(".filter__hoddie")
-    const filterSweaterHTML = document.querySelector(".filter__sweater")
-
-    // contentFiltrosHTML.addEventListener("click", function (e) {
-    //     console.log(e.target);
-    // })
-
-    // const categorys = {}
-    const countsCategory = {};
-    let allCategorys = 0;
-
-    // for (const category of db.products) {
-    //     categorys[category.category]=category.category;
-    // }
-
-    for (const counts of db.products) {
-
-        if (countsCategory[counts.category]) {
-            
-            countsCategory[counts.category]++;
-            allCategorys ++
-        } else{
-            countsCategory[counts.category]=1;
-            allCategorys ++
-        }
-    }
-
-    // console.log(countsCategory);
-    // console.log(allCategorys);
-
-    showAllHTML.innerHTML = `<h2 class="all">Show all</h2> <p>Show all products: ${allCategorys}</p>`;
-
-    filterShirtHTML.innerHTML = `<h2 class="shirt">Shirt</h2> <p>Show all products: ${countsCategory.shirt}</p>`;
-
-    filterHoddieHTML.innerHTML = `<h2 class="hoddie">Hoddie</h2> <p>Show all products: ${countsCategory.hoddie}</p>`;
-
-    filterSweaterHTML.innerHTML = `<h2 class="sweater">Sweater</h2> <p>Show all products: ${countsCategory.sweater}</p>`;
-
-    contentFiltrosHTML.addEventListener("click",function (e) {
-       console.log(e.target); 
-    })
-
-    //     const productsHTML = document.querySelector(".products");
-        
-        // productsHTML.addEventListener("click", function (e) {
-        //     if (e.target.classList.contains("fa-plus")) {
-        //         const id = Number(e.target.id);
-    
-        //         const productFine = db.products.find((products) => products.id === id);
-    
-        //         if (db.bag[productFine.id]) {
-    
-        //             if (productFine.quantity === db.bag[productFine.id].amount) return alert("No tenemos mas en bodega")
-    
-        //             db.bag[productFine.id].amount++;
-        //         } else {
-        //             db.bag[productFine.id] = { ...productFine, amount: 1 }
-        //         }
-    
-        //         window.localStorage.setItem("bag", JSON.stringify(db.bag))
-        //         printProductBag(db);
-        //         notificationInBag(db)
-    
-        //     }
-        // });
-
+    filterShow(db)
+    filterShirt(db)
+    filterHoddie(db)
+    filterSweater(db)
 
 }
 

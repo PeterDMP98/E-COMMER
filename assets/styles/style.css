@@ -33,6 +33,7 @@
     --backg-info-product: hsl(0, 0%, 90%);
     --backg-faPlus: #777;
     --backg-color-header: #fff;
+    --backg-all-product: rgba(0, 0, 0, 0.055);
 }
 
 :root[data-theme="dark"] {
@@ -78,6 +79,7 @@
     --backg-faPlus: radial-gradient(circle farthest-corner at 15% 90%, #bc318f, transparent 50%);
     --backg-color-product: linear-gradient(#386193, #5258cf 30%, #5258cf 50%, #5258cf 70%, #386193 100%);
     --backg-color-header: linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%);
+    --backg-all-product: rgba(80, 78, 78, 0.356);
 }
 
 * {
@@ -401,7 +403,7 @@ header {
     justify-content: end;
     align-items: center;
     min-height: 500px;
-    width: 40%;
+    width: 50%;
 
     background: var(--primer-backg);
 
@@ -421,12 +423,14 @@ header {
 }
 
 .newNews>h2 {
+    font-size: 2rem;
     margin-bottom: 1.5rem;
 }
 
 .newNews__description {
     color: var(--color-text-general);
-    font-weight: 200;
+    font-weight: 650;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
@@ -463,10 +467,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 0 auto; */
 
     padding: 0.5rem;
-    /* min-width: 200px; */
 }
 
 .content-filtros {
@@ -478,9 +480,13 @@ header {
 
 .filtro {
     text-align: center;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem;
     border: none;
-
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 70px;
+    width: 150px;
+    padding: 0.5rem;
     background: var(--primer-backg);
 
     transition: color 0.5s;
@@ -497,7 +503,7 @@ header {
 .filtro:hover {
     background: var(--backg-hover);
     color: var(--color-text-secundario);
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
 }
 
 
@@ -507,9 +513,10 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: var(--width-body);
-    margin: 0 auto;
+    margin: 20px auto;
     gap: 1rem;
-
+    background-color: var(--backg-all-product);
+    border-radius: 1rem;
 }
 
 .product {
@@ -596,23 +603,44 @@ footer {
 }
 
 .content__footer {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.content__footer>* {
+.content__footer * {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
 .social {
-    display: inline-block;
+    height: 100%;
+    display: flex;
+
+}
+
+.content__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.social>h2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: top 0;
+    align-items: center;
+
 }
 
 
-.social>a {
+.content__social>a {
     font-size: 1.5rem;
     margin: 0.5rem;
 }
@@ -680,7 +708,6 @@ footer {
     padding: 1rem;
     box-shadow: 0 0 5rem rgba(0, 0, 0, 0.37);
     gap: 0.5rem;
-
 }
 
 .YO>a {
@@ -701,10 +728,196 @@ footer {
     align-items: flex-end;
 }
 
+.oneline__y {
+    display: none;
+}
 
-/* @media (min-width: 500px) {
-    .Mybags{
-        
+.twoline__y {
+    display: none;
+}
+
+.oneline__x {
+    height: 2px;
+    bottom: 60px;
+    min-width: 80px;
+    background-color: #fff;
+    position: absolute;
+
+    animation-name: left;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes left {
+    from {
+        left: 10px;
     }
-    
-} */
+
+    to {
+        left: 70%;
+    }
+}
+
+
+.twoline__x {
+    position: absolute;
+    height: 2px;
+    bottom: 30px;
+    right: 0;
+    min-width: 80px;
+    background-color: #fff;
+    position: absolute;
+
+    animation-name: right;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes right {
+    from {
+        right: 10px;
+    }
+
+    to {
+        right: 70%;
+    }
+}
+
+
+@media (min-width: 850px) {
+
+    .home {
+        flex-direction: row;
+        margin-bottom: 10rem;
+        width: 100%;
+    }
+
+    .content-img {
+        width: 50%;
+        order: 1;
+    }
+
+    .newPorduct-img {
+        min-height: 650px;
+        width: 100%;
+    }
+
+    .newNews {
+        display: flex;
+        justify-content: center;
+        order: 0;
+    }
+
+    .content__footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .content-filtros {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .oneline__y {
+        width: 2px;
+        left: 420px;
+        height: 70px;
+        background-color: #fff;
+
+        position: absolute;
+        animation-name: top;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes top {
+        from {
+            top: -70px;
+        }
+
+        to {
+            top: 75%;
+        }
+    }
+
+    .twoline__y {
+        position: absolute;
+        width: 2px;
+        right: 400px;
+        height: 70px;
+        background-color: #fff;
+        position: absolute;
+
+        animation-name: bottom;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes bottom {
+        from {
+            bottom: 0;
+
+        }
+
+        to {
+            bottom: 100%;
+
+        }
+    }
+
+
+    .oneline__x {
+        height: 2px;
+        bottom: 60px;
+        width: 250px;
+        background-color: #fff;
+        position: absolute;
+
+        animation-name: left;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes left {
+        from {
+            left: 5px;
+        }
+
+        to {
+            left: 65%;
+        }
+    }
+
+
+    .twoline__x {
+        position: absolute;
+        height: 2px;
+        bottom: 30px;
+        right: 0;
+        width: 250px;
+        background-color: #fff;
+        position: absolute;
+
+        animation-name: right;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes right {
+        from {
+            right: 5px;
+        }
+
+        to {
+            right: 65%;
+        }
+    }
+
+}
