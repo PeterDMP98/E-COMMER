@@ -32,7 +32,7 @@
     --color-text-secundario: #fff;
     --backg-info-product: hsl(0, 0%, 90%);
     --backg-faPlus: #777;
-    --backg-color-header: #fff;
+    --backg-color-header: #ffffffc5;
     --backg-all-product: rgba(0, 0, 0, 0.055);
 }
 
@@ -78,7 +78,7 @@
     --backg-info-product: #000;
     --backg-faPlus: radial-gradient(circle farthest-corner at 15% 90%, #bc318f, transparent 50%);
     --backg-color-product: linear-gradient(#386193, #5258cf 30%, #5258cf 50%, #5258cf 70%, #386193 100%);
-    --backg-color-header: linear-gradient(#fec66d, #f77638 30%, #e33f5f 50%, #bc318f 70%, #6559ca 100%);
+    --backg-color-header: #0e2e55c4;
     --backg-all-product: rgba(80, 78, 78, 0.356);
 }
 
@@ -129,7 +129,6 @@ img {
 }
 
 header {
-    background-color: var(--backg-color-header);
     height: var(--height-top);
     position: fixed;
     left: 0;
@@ -139,7 +138,15 @@ header {
 }
 
 /**********************************NABAR***********************/
+.navbar{
+transition: background-color 0.5s, color 0.5s, height 0.5s;
+}
 
+.navbar__trasparent {
+    background-color: var(--backg-color-header);
+    color: var(--color-text-general);
+    height: calc(var(--height-top) + 0.5rem);
+}
 
 .content__first-header {
     height: var(--height-top);

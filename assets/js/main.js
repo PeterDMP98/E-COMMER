@@ -55,7 +55,6 @@ function bag() {
 
 }
 
-
 function menu() {
     const bagHTML = document.querySelector(".fa-bars");
     const MybagsHTML = document.querySelector(".menu");
@@ -483,6 +482,18 @@ function filterSweater(db) {
     })
 }
 
+function transitionNavbar() {
+    const navbarTrasparent = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 250) {
+            navbarTrasparent.classList.add("navbar__trasparent");
+        } else {
+            navbarTrasparent.classList.remove("navbar__trasparent");
+        }
+    });
+}
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) || (await getProducts()),
@@ -503,6 +514,7 @@ async function main() {
     filterShirt(db)
     filterHoddie(db)
     filterSweater(db)
+    transitionNavbar()
 
 }
 
