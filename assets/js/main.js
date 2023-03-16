@@ -335,7 +335,7 @@ function filterShirt(db) {
 
     const filterShirtHTML = document.querySelector(".filter__shirt")
 
-    filterShirtHTML.innerHTML = `Shirt products: ${allCategory.shirt}`;
+    filterShirtHTML.innerHTML = `Shirt: ${allCategory.shirt}`;
     
     filterShirtHTML.addEventListener("click", function () {
 
@@ -393,7 +393,7 @@ function filterHoddie(db) {
 
     const filterHoddieHTML = document.querySelector(".filter__hoddie")
 
-    filterHoddieHTML.innerHTML = `Hoddie products: ${allCategory.hoddie}`;
+    filterHoddieHTML.innerHTML = `Hoddie: ${allCategory.hoddie}`;
 
     filterHoddieHTML.addEventListener("click", function () {
 
@@ -437,7 +437,7 @@ function filterSweater(db) {
 
     const filterSweaterHTML = document.querySelector(".filter__sweater")
 
-    filterSweaterHTML.innerHTML = `Sweater products: ${allCategory.sweater}`;
+    filterSweaterHTML.innerHTML = `Sweater: ${allCategory.sweater}`;
 
     filterSweaterHTML.addEventListener("click", function () {
 
