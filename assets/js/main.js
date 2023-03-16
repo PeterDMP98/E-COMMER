@@ -321,7 +321,7 @@ function filterShow(db) {
 
     const showAllHTML = document.querySelector(".filter__show-all")
 
-    showAllHTML.innerHTML = `All show: ${allShow}`;
+    showAllHTML.innerHTML = `All : ${allShow}`;
 
     showAllHTML.addEventListener("click", function () {
         printProduct(db);
