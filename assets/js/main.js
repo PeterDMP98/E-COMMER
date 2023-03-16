@@ -428,15 +428,6 @@ function filterHoddie(db) {
                 
         }
 
-        
-        // let html ={};
-        // for (const allHoddie of db.products) {
-
-        //     if (allHoddie.category == 'hoddie') {
-        //         html[allHoddie.id]= allHoddie
-        //     }
-        // }
-        // console.log(html);
     })
     
 }
@@ -516,8 +507,3 @@ async function main() {
 }
 
 main()
-// async ()=> {
-//     const res= await getProducts();
-
-//     console.log(res);
-// }
